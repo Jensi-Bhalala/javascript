@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Table</title>
+</head>
+<body>
+    <div class="section" style="padding-top: 30px;">
+        <table class="table " align="center" border="1" cellspacing="10" cellpadding="10">
+            <thead>
+                <tr>
+                    <td>sr.no</td>
+                    <td>Name</td>
+                    <td>email</td>
+                    <td>password</td>
+                    <td>phone</td>
+                </tr>
+            </thead>
+            <tbody id="data"></tbody>
+        </table>
+    </div>
+</body>
+<script type="text/javascript">
+    let record = [
+        {
+            name: "Jensi",
+            email: "jensi@gmail.com",
+            password: 345678,
+            phone: 2345,
+        },
+        {
+            name: "Hetvi",
+            email: "hetvi@gmail.com",
+            password: 57668,
+            phone: 324354657,
+        },
+        {
+            name: "Bansi",
+            email: "bansi@gmail.com",
+            password: 45676897,
+            phone: 27645825,
+        },
+        {
+            name: "Isha",
+            email: "isha@gmail.com",
+            password: 453675039,
+            phone: 8596790,
+        },
+
+    ]
+    let tbl = "";
+    record.map((val, index) => {
+        tbl += `
+                    <tr>
+                        <td>${++index}</td>
+                        <td>${val.name}</td>
+                        <td>${val.email}</td>
+                        <td>${val.password}</td>
+                        <td>${val.phone}</td>
+                    </tr>
+               `
+    })
+    document.getElementById('data').innerHTML = tbl;
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="name"></h1>
+    <h1 id="email"></h1>
+    <h1 id="password"></h1>
+    <h1 id="city"></h1>
+    <h1 id="country"></h1>
+    <h1 id="state"></h1>
+    <h1 id="city1"></h1>
+
+
+</body>
+
+<script>
+    let obj = {
+        name: "jensi",
+        email: "jensibhalala@gmail.com",
+        password: 123456,
+        city: "surat",
+        country: {
+            country: "india",
+            state: "gujarat",
+            city: ["surat", "vadodara", "ahemdabad"]
+
+        }
+
+    }
+
+    document.getElementById('name').innerHTML = `Name : ${obj.name}`;
+    document.getElementById('email').innerHTML = `Email : ${obj.email}`;
+    document.getElementById('password').innerHTML = `Password : ${obj.password}`;
+    document.getElementById('city').innerHTML = `City : ${obj.city}`;
+    document.getElementById('country').innerHTML = `Country : ${obj.country.country}`;
+    document.getElementById('state').innerHTML = `State : ${obj.country.state}`;
+    document.getElementById('city1').innerHTML = `City : ${obj.country.city1[2]}`;
+</script>
+
+</html>

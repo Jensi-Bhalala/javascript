@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <div align="center" id="record"></div> 
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript">
+        const viewuser = () => {
+            $.ajax({
+                method : 'GET',
+                url : `https://dummyjson.com/todos`,
+                success : function(data){
+                    console.log(data);
+                    console.log(data.todos);
+                    let tododata = data.todos;
+                    let tbl = "";
+                    tododata.map((val,index)=>{
+                        const{id,todo}=val;
+                        tbl += `
+                                <h2>id:${id}</h2>
+                                <h2>todo:${todo}</h2>
+                                `
+                    })
+                    document.getElementById('record').innerHTML=tbl;
+
+                }
+            })
+        }
+        viewuser()
+    </script>
+</body>
+</html>
